@@ -11,4 +11,7 @@
 
     <mpMetrics authentication="false" />
 
+    <!-- Dynamic Config property specified in HelloResource.java...  -->
+    <!-- <variable name="dukes.place" value="Think 2019" />  -->
+
 </server>

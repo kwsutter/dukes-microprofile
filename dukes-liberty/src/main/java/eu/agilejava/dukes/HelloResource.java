@@ -43,12 +43,13 @@ import org.eclipse.microprofile.rest.client.inject.RestClient;
 public class HelloResource {
 
     @Inject
-    @ConfigProperty(name = "place", defaultValue = "Sweden")
-    private String place;
+    @ConfigProperty(name = "dukes.place", defaultValue = "Sweden")
+    private String dukesPlace;
 
     @Metered
     @GET
+    @Produces("text/plain")
     public Response greet() {
-        return Response.ok("Hello "+ place + "! ...from Liberty").build();
+        return Response.ok("Hello " + dukesPlace + "! ...from Liberty").build();
     }
 }
