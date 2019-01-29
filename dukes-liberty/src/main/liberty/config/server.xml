@@ -14,4 +14,9 @@
     <!-- Dynamic Config property specified in HelloResource.java...  -->
     <!-- <variable name="dukes.place" value="Think 2019" />  -->
 
+    <!-- Dynamic Config properties specified in HelloResource.java...  -->
+    <!-- <variable name="dukes.zip" value="55906" />  -->
+    <!-- <variable name="openweathermap.units" value="imperial" />  -->
+    <!-- <variable name="openweathermap.appid" value="" />  -->
+
 </server>

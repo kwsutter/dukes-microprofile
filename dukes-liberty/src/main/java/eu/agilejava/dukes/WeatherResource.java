@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2015 Ivar Grimstad (ivar.grimstad@gmail.com).
+ * Copyright 2019 Kevin Sutter (kwsutter@gmail.com).
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,32 +23,62 @@
  */
 package eu.agilejava.dukes;
 
+import eu.agilejava.dukes.weather.WeatherService;
+import java.io.StringReader;
+import java.lang.String;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.json.JsonReader;
+import javax.json.JsonString;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.metrics.annotation.Counted;
 import org.eclipse.microprofile.metrics.annotation.Metered;
+import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 /**
  *
- * @author Ivar Grimstad (ivar.grimstad@gmail.com)
+ * @author Kevin Sutter (kwsutter@gmail.com)
  */
-@Path("/hello")
+@Path("/weather")
 @RequestScoped
-public class HelloResource {
+public class WeatherResource {
 
     @Inject
-    @ConfigProperty(name = "dukes.place", defaultValue = "Sweden")
-    private String dukesPlace;
+    @ConfigProperty(name = "dukes.zip", defaultValue = "94065")  
+    private String dukesZip;
+
+    @Inject
+    @ConfigProperty(name = "openweathermap.appid", defaultValue = "b6907d289e10d714a6e88b30761fae22")  // not valid
+    private String owmAppid;
+
+    @Inject
+    @ConfigProperty(name = "openweathermap.units", defaultValue = "imperial")  // Fahrenheit
+    private String owmUnits;
+
+    @Inject
+    @RestClient
+    private WeatherService weatherService;
 
     @Metered
     @GET
     @Produces("text/plain")
-    public Response greet() {
-        return Response.ok("Hello " + dukesPlace + "! ...from Liberty").build();
+    public Response currentTemp() {
+        int temp = 0;
+
+        Response currentWeather = weatherService.weather(dukesZip, owmUnits, owmAppid);
+
+        String jsonString = currentWeather.readEntity(String.class);
+        JsonReader reader = Json.createReader(new StringReader(jsonString));
+        JsonObject jsonObject = reader.readObject();
+        temp = jsonObject.getJsonObject("main").getInt("temp");
+
+        return Response.ok("Hello " + dukesZip + "!  The current tempature is " + temp + " degrees Fahrenheit!").build();
     }
 }
