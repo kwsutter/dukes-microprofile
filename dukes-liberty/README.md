@@ -32,6 +32,12 @@ To build and run the application:
 1. `mvn clean install`
 1. `mvn liberty:run-server`  (ctrl-c ends the server)
 
+OR ...
+
+To run application as a "fat jar"
+1. `mvn clean install -P runnable`
+1. `java -jar dukes-liberty.jar`
+
 * Dukes-Liberty Endpoint:  http://localhost:9080/dukes-liberty
 * Dukes-Liberty API Endpoint:  http://localhost:9080/dukes-liberty/api
 * Dukes-Liberty Hello API Endpoint:  http://localhost:9080/dukes-liberty/api/hello
