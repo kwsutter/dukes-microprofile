@@ -38,6 +38,10 @@ To run application as a "fat jar"
 1. `mvn clean install -P runnable`
 1. `java -jar dukes-liberty.jar`
 
+### Endpoints
+
+The context root (dukes-liberty) is set in the `src/main/webapp/WEB-INF/ibm-web-ext.xml` file. The application path root ("api") is set in ApplicationConfig.java.  The ports are set in the pom.xml file.
+
 * Dukes-Liberty Endpoint:  http://localhost:9080/dukes-liberty
 * Dukes-Liberty API Endpoint:  http://localhost:9080/dukes-liberty/api
 * Dukes-Liberty Hello API Endpoint:  http://localhost:9080/dukes-liberty/api/hello
@@ -46,7 +50,3 @@ To run application as a "fat jar"
 * MicroProfile Metrics Endpoint:  http://localhost:9080/metrics
 * MicroProfile OpenAPI Endpoint:  http://localhost:9080/openapi
 * MicroProfile OpenAPI UI:  http://localhost:9080/openapi/ui/
-
-### Endpoints
-
-The context root (dukes-liberty) is set in the `src/main/webapp/WEB-INF/ibm-web-ext.xml` file. The ports are set in the pom.xml file.
