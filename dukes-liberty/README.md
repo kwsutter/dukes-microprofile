@@ -33,7 +33,9 @@ To build and run the application:
 1. `mvn liberty:run-server`  (ctrl-c ends the server)
 
 * Dukes-Liberty Endpoint:  http://localhost:9080/dukes-liberty
+* Dukes-Liberty API Endpoint:  http://localhost:9080/dukes-liberty/api
 * Dukes-Liberty Hello API Endpoint:  http://localhost:9080/dukes-liberty/api/hello
+* Dukes-Liberty warmHello API Endpoint:  http://localhost:9080/dukes-liberty/api/warmHello
 * MicroProfile Health Endpoint:  http://localhost:9080/health
 * MicroProfile Metrics Endpoint:  http://localhost:9080/metrics
 * MicroProfile OpenAPI Endpoint:  http://localhost:9080/openapi

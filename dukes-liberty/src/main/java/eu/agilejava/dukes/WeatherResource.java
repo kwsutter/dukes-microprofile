@@ -46,16 +46,16 @@ import org.eclipse.microprofile.rest.client.inject.RestClient;
  *
  * @author Kevin Sutter (kwsutter@gmail.com)
  */
-@Path("/weather")
+@Path("/warmHello")
 @RequestScoped
 public class WeatherResource {
 
     @Inject
-    @ConfigProperty(name = "dukes.zip", defaultValue = "94065")  
+    @ConfigProperty(name = "dukes.zip", defaultValue = "94065")
     private String dukesZip;
 
     @Inject
-    @ConfigProperty(name = "openweathermap.appid", defaultValue = "b6907d289e10d714a6e88b30761fae22")  // not valid
+    @ConfigProperty(name = "openweathermap.appid", defaultValue = "")
     private String owmAppid;
 
     @Inject
@@ -69,16 +69,22 @@ public class WeatherResource {
     @Metered
     @GET
     @Produces("text/plain")
-    public Response currentTemp() {
-        int temp = 0;
+    public Response helloWithTemp() {
+
+        int temp = getCurrentTemp();
+        return Response.ok("Hello " + dukesZip + "!  The current tempature is " + temp + " degrees Fahrenheit!").build();
+    }
+
+
+    public int getCurrentTemp() {
 
         Response currentWeather = weatherService.weather(dukesZip, owmUnits, owmAppid);
 
         String jsonString = currentWeather.readEntity(String.class);
         JsonReader reader = Json.createReader(new StringReader(jsonString));
         JsonObject jsonObject = reader.readObject();
-        temp = jsonObject.getJsonObject("main").getInt("temp");
+        int temp = jsonObject.getJsonObject("main").getInt("temp");
+        return temp;
 
-        return Response.ok("Hello " + dukesZip + "!  The current tempature is " + temp + " degrees Fahrenheit!").build();
     }
 }
