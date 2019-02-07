@@ -41,7 +41,7 @@ OR ...
 To run application as a "fat jar":
 ----
 mvn clean install -P runnable
-java -jar dukes-liberty.jar
+java -jar target/dukes-liberty.jar
 ----
 
 [[endpoints]]
