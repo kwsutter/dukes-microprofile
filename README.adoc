@@ -2,4 +2,4 @@
 
 Demo application for microprofile.io.
 
-Check out [dukes-liberty](https://github.com/kwsutter/dukes-microprofile/tree/master/dukes-liberty) for information on how to build and execute the samples on [Open Liberty](https://openliberty.io).
+Check out https://github.com/kwsutter/dukes-microprofile/tree/master/dukes-liberty[dukes-liberty] for information on how to build and execute the samples on https://openliberty.io[Open Liberty].
