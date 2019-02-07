@@ -1,11 +1,4 @@
-
-=== Table of Contents
-* <<summary, Summary>>
-* <<requirements, Requirements>>
-* <<configuration, Configuration>>
-* <<project-contents, Project contents>>
-* <<run, Run>>
-* <<endpoints, EndPoints>>
+== Dukes-Liberty
 
 [[summary]]
 === Summary
