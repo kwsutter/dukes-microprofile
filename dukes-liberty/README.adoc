@@ -56,5 +56,6 @@ The ports are set in the `pom.xml` file.
  - Dukes-Liberty warmHello API Endpoint:  http://localhost:9080/warmHello
  - MicroProfile Health Endpoint:  http://localhost:9080/health
  - MicroProfile Metrics Endpoint:  http://localhost:9080/metrics
+ - MicroProfile Metrics Application Endpoint:  http://localhost:9080/metrics/application
  - MicroProfile OpenAPI Endpoint:  http://localhost:9080/openapi
  - MicroProfile OpenAPI UI:  http://localhost:9080/openapi/ui/
