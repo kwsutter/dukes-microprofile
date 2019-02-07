@@ -23,7 +23,8 @@
         <version.liberty-maven-plugin>2.6.3</version.liberty-maven-plugin>
         <version.maven-war-plugin>3.2.2</version.maven-war-plugin>
         <version.maven-resources-plugin>3.0.2</version.maven-resources-plugin>
-        <version.microprofile>2.1</version.microprofile>
+        <version.microprofile>2.2-RC1</version.microprofile>
+        <version.openliberty>18.0.0.4</version.openliberty>  <!-- RELEASE is the latest -->
     </properties>
 
     <dependencies>
@@ -84,7 +85,7 @@
                     <assemblyArtifact>
                         <groupId>io.openliberty</groupId>
                         <artifactId>openliberty-runtime</artifactId>
-                        <version>RELEASE</version>
+                        <version>${version.openliberty}</version>
                         <type>zip</type>
                     </assemblyArtifact>
                     <serverName>DukesLiberty</serverName>
