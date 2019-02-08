@@ -24,7 +24,7 @@
         <version.maven-war-plugin>3.2.2</version.maven-war-plugin>
         <version.maven-resources-plugin>3.0.2</version.maven-resources-plugin>
         <version.microprofile>2.2-RC1</version.microprofile>
-        <version.openliberty>18.0.0.4</version.openliberty>  <!-- RELEASE is the latest -->
+        <version.openliberty>RELEASE</version.openliberty>  <!-- RELEASE is the latest -->
     </properties>
 
     <dependencies>

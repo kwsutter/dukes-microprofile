@@ -48,8 +48,8 @@ import org.eclipse.microprofile.rest.client.inject.RestClient;
 public class WeatherResource {
 
     @Inject
-    @ConfigProperty(name = "dukes.zip", defaultValue = "94065")
-    private String dukesZip;
+    @ConfigProperty(name = "dukes.zipcode", defaultValue = "94065")
+    private String dukesZipcode;
 
     @Inject
     @ConfigProperty(name = "openweathermap.appid", defaultValue = "")
@@ -69,13 +69,13 @@ public class WeatherResource {
     public Response helloWithTemp() {
 
         int temp = getCurrentTemp();
-        return Response.ok("Hello " + dukesZip + "!  The current tempature is " + temp + " degrees Fahrenheit!").build();
+        return Response.ok("Hello " + dukesZipcode + "!  The current tempature is " + temp + " degrees Fahrenheit!").build();
     }
 
 
     public int getCurrentTemp() {
 
-        Response currentWeather = weatherService.weather(dukesZip, owmUnits, owmAppid);
+        Response currentWeather = weatherService.weather(dukesZipcode, owmUnits, owmAppid);
 
         String jsonString = currentWeather.readEntity(String.class);
         JsonReader reader = Json.createReader(new StringReader(jsonString));
