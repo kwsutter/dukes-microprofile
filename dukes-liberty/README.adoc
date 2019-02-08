@@ -19,7 +19,7 @@ The application is configured to provide various technologies and features. Thes
 
 [[project-contents]]
 === Project contents
-The context root can be set in the `src/main/webapp/WEB-INF/ibm-web-ext.xml` file. The ports are set in the `pom.xml` file.
+The ports are set in the `pom.xml` file.
 
  - **MicroProfile** : The http://microprofile.io/[MicroProfile project] is an open community with the aim of optimizing Enterprise Java for a microservices architecture.
 MicroProfile will be evolving with guidance from the community.
@@ -47,11 +47,10 @@ java -jar target/dukes-liberty.jar
 [[endpoints]]
 === Endpoints
 
-The context root can be set in the `src/main/webapp/WEB-INF/ibm-web-ext.xml` file.
 The application path root can be set in `ApplicationConfig.java`.
 The ports are set in the `pom.xml` file.
 
- - Dukes-Liberty Endpoint:  http://localhost:9080/
+ - Open Liberty Endpoint:  http://localhost:9080/
  - Dukes-Liberty warmHello API Endpoint:  http://localhost:9080/warmHello
  - MicroProfile Health Endpoint:  http://localhost:9080/health
  - MicroProfile Metrics Endpoint:  http://localhost:9080/metrics
