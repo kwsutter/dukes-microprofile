@@ -51,7 +51,7 @@ The application path root can be set in `ApplicationConfig.java`.
 The ports are set in the `pom.xml` file.
 
  - Open Liberty Endpoint:  http://localhost:9080/
- - Dukes-Liberty warmHello API Endpoint:  http://localhost:9080/warmHello
+ - Dukes-Liberty warmHello API Endpoint:  http://localhost:9080/api/warmHello
  - MicroProfile Health Endpoint:  http://localhost:9080/health
  - MicroProfile Metrics Endpoint:  http://localhost:9080/metrics
  - MicroProfile Metrics Application Endpoint:  http://localhost:9080/metrics/application
