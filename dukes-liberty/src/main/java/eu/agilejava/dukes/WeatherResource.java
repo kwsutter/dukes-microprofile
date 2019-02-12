@@ -38,9 +38,6 @@ import javax.ws.rs.core.Response;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.metrics.annotation.Metered;
 import org.eclipse.microprofile.openapi.annotations.Operation;
-import org.eclipse.microprofile.openapi.annotations.media.Content;
-import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
-import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import eu.agilejava.dukes.weather.WeatherService;
@@ -73,7 +70,7 @@ public class WeatherResource {
     @GET
     @Produces("text/plain")
     @Operation(
-        summary = "Get the real-time emperature for the specified zip code",
+        summary = "Get the real-time temperature for the specified zip code",
         description = "Retrieves the temperature for the specified location ")
 
     public Response helloWithTemp() {
